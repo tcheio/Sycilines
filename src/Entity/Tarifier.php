@@ -16,6 +16,18 @@ class Tarifier
     #[ORM\Column]
     private ?int $tarif = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Periode $idPeriode = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Liaison $idLiaison = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Type $idType = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -29,6 +41,42 @@ class Tarifier
     public function setTarif(int $tarif): self
     {
         $this->tarif = $tarif;
+
+        return $this;
+    }
+
+    public function getIdPeriode(): ?Periode
+    {
+        return $this->idPeriode;
+    }
+
+    public function setIdPeriode(?Periode $idPeriode): self
+    {
+        $this->idPeriode = $idPeriode;
+
+        return $this;
+    }
+
+    public function getIdLiaison(): ?Liaison
+    {
+        return $this->idLiaison;
+    }
+
+    public function setIdLiaison(?Liaison $idLiaison): self
+    {
+        $this->idLiaison = $idLiaison;
+
+        return $this;
+    }
+
+    public function getIdType(): ?Type
+    {
+        return $this->idType;
+    }
+
+    public function setIdType(?Type $idType): self
+    {
+        $this->idType = $idType;
 
         return $this;
     }
