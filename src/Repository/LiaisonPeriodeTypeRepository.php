@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Tarifier;
+use App\Entity\LiaisonPeriodeType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Tarifier>
+ * @extends ServiceEntityRepository<LiaisonPeriodeType>
  *
- * @method Tarifier|null find($id, $lockMode = null, $lockVersion = null)
- * @method Tarifier|null findOneBy(array $criteria, array $orderBy = null)
- * @method Tarifier[]    findAll()
- * @method Tarifier[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method LiaisonPeriodeType|null find($id, $lockMode = null, $lockVersion = null)
+ * @method LiaisonPeriodeType|null findOneBy(array $criteria, array $orderBy = null)
+ * @method LiaisonPeriodeType[]    findAll()
+ * @method LiaisonPeriodeType[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TarifierRepository extends ServiceEntityRepository
+class LiaisonPeriodeTypeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Tarifier::class);
+        parent::__construct($registry, LiaisonPeriodeType::class);
     }
 
-    public function save(Tarifier $entity, bool $flush = false): void
+    public function save(LiaisonPeriodeType $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class TarifierRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Tarifier $entity, bool $flush = false): void
+    public function remove(LiaisonPeriodeType $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class TarifierRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Tarifier[] Returns an array of Tarifier objects
+//     * @return LiaisonPeriodeType[] Returns an array of LiaisonPeriodeType objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class TarifierRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Tarifier
+//    public function findOneBySomeField($value): ?LiaisonPeriodeType
 //    {
 //        return $this->createQueryBuilder('t')
 //            ->andWhere('t.exampleField = :val')

@@ -18,15 +18,15 @@ class Liaison
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Secteur $idSecteur = null;
+    private ?Secteur $Secteur = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Port $idPortDepart = null;
+    private ?Port $portDepart = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Port $idPortArrivee = null;
+    private ?Port $portArrivee = null;
 
     public function getId(): ?int
     {
@@ -45,38 +45,38 @@ class Liaison
         return $this;
     }
 
-    public function getIdSecteur(): ?Secteur
+    public function getSecteur(): ?Secteur
     {
-        return $this->idSecteur;
+        return $this->Secteur;
     }
 
-    public function setIdSecteur(?Secteur $idSecteur): self
+    public function setSecteur(?Secteur $Secteur): self
     {
-        $this->idSecteur = $idSecteur;
+        $this->Secteur = $Secteur;
 
         return $this;
     }
 
-    public function getIdPortDepart(): ?Port
+    public function getportDepart(): ?Port
     {
-        return $this->idPortDepart;
+        return $this->portDepart;
     }
 
-    public function setIdPortDepart(?Port $idPortDepart): self
+    public function setportDepart(?Port $portDepart): self
     {
-        $this->idPortDepart = $idPortDepart;
+        $this->portDepart = $portDepart;
 
         return $this;
     }
 
-    public function getIdPortArrivee(): ?Port
+    public function getportArrivee(): ?Port
     {
-        return $this->idPortArrivee;
+        return $this->portArrivee;
     }
 
-    public function setIdPortArrivee(?Port $idPortArrivee): self
+    public function setportArrivee(?Port $portArrivee): self
     {
-        $this->idPortArrivee = $idPortArrivee;
+        $this->portArrivee = $portArrivee;
 
         return $this;
     }

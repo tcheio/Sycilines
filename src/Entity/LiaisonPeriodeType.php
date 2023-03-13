@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\TarifierRepository;
+use App\Repository\LiaisonPeriodeTypeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TarifierRepository::class)]
-class Tarifier
+#[ORM\Entity(repositoryClass: LiaisonPeriodeTypeRepository::class)]
+class LiaisonPeriodeType
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,15 +18,15 @@ class Tarifier
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Periode $idPeriode = null;
+    private ?Periode $Periode = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Liaison $idLiaison = null;
+    private ?Liaison $Liaison = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Type $idType = null;
+    private ?Type $Type = null;
 
     public function getId(): ?int
     {
@@ -45,38 +45,38 @@ class Tarifier
         return $this;
     }
 
-    public function getIdPeriode(): ?Periode
+    public function getPeriode(): ?Periode
     {
-        return $this->idPeriode;
+        return $this->Periode;
     }
 
-    public function setIdPeriode(?Periode $idPeriode): self
+    public function setPeriode(?Periode $Periode): self
     {
-        $this->idPeriode = $idPeriode;
+        $this->Periode = $Periode;
 
         return $this;
     }
 
-    public function getIdLiaison(): ?Liaison
+    public function getLiaison(): ?Liaison
     {
-        return $this->idLiaison;
+        return $this->Liaison;
     }
 
-    public function setIdLiaison(?Liaison $idLiaison): self
+    public function setLiaison(?Liaison $Liaison): self
     {
-        $this->idLiaison = $idLiaison;
+        $this->Liaison = $Liaison;
 
         return $this;
     }
 
-    public function getIdType(): ?Type
+    public function getType(): ?Type
     {
-        return $this->idType;
+        return $this->Type;
     }
 
-    public function setIdType(?Type $idType): self
+    public function setType(?Type $Type): self
     {
-        $this->idType = $idType;
+        $this->Type = $Type;
 
         return $this;
     }

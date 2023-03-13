@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ParticiperRepository;
+use App\Repository\ReservationCategorieRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ParticiperRepository::class)]
-class Participer
+#[ORM\Entity(repositoryClass: ReservationCategorieRepository::class)]
+class ReservationCategorie
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,11 +18,11 @@ class Participer
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Type $idType = null;
+    private ?Categorie $Categorie = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Reservation $idReservation = null;
+    private ?Reservation $Reservation = null;
 
     public function getId(): ?int
     {
@@ -41,26 +41,26 @@ class Participer
         return $this;
     }
 
-    public function getIdType(): ?Type
+    public function getCategorie(): ?Categorie
     {
-        return $this->idType;
+        return $this->idCategorie;
     }
 
-    public function setIdType(?Type $idType): self
+    public function setIdType(?Type $Categorie): self
     {
-        $this->idType = $idType;
+        $this->Categorie = $idCategorie;
 
         return $this;
     }
 
-    public function getIdReservation(): ?Reservation
+    public function getReservation(): ?Reservation
     {
-        return $this->idReservation;
+        return $this->Reservation;
     }
 
-    public function setIdReservation(?Reservation $idReservation): self
+    public function setReservation(?Reservation $Reservation): self
     {
-        $this->idReservation = $idReservation;
+        $this->Reservation = $Reservation;
 
         return $this;
     }

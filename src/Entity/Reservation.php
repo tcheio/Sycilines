@@ -15,37 +15,37 @@ class Reservation
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Client $idClient = null;
+    private ?Client $Client = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Traversee $idTraversee = null;
+    private ?Traversee $Traversee = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getIdClient(): ?Client
+    public function getClient(): ?Client
     {
-        return $this->idClient;
+        return $this->Client;
     }
 
-    public function setIdClient(?Client $idClient): self
+    public function setClient(?Client $Client): self
     {
-        $this->idClient = $idClient;
+        $this->Client = $Client;
 
         return $this;
     }
 
-    public function getIdTraversee(): ?Traversee
+    public function getTraversee(): ?Traversee
     {
-        return $this->idTraversee;
+        return $this->Traversee;
     }
 
-    public function setIdTraversee(?Traversee $idTraversee): self
+    public function setTraversee(?Traversee $Traversee): self
     {
-        $this->idTraversee = $idTraversee;
+        $this->Traversee = $Traversee;
 
         return $this;
     }

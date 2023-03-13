@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ProposerRepository;
+use App\Repository\BateauEquipementRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ProposerRepository::class)]
-class Proposer
+#[ORM\Entity(repositoryClass: BateauEquipementRepository::class)]
+class BateauEquipement
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,11 +18,11 @@ class Proposer
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Bateau $idBateau = null;
+    private ?Bateau $Bateau = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Equipement $idEquipement = null;
+    private ?Equipement $Equipement = null;
 
     public function getId(): ?int
     {
@@ -41,26 +41,26 @@ class Proposer
         return $this;
     }
 
-    public function getIdBateau(): ?Bateau
+    public function getBateau(): ?Bateau
     {
-        return $this->idBateau;
+        return $this->Bateau;
     }
 
-    public function setIdBateau(?Bateau $idBateau): self
+    public function setIdBateau(?Bateau $Bateau): self
     {
-        $this->idBateau = $idBateau;
+        $this->Bateau = $Bateau;
 
         return $this;
     }
 
-    public function getIdEquipement(): ?Equipement
+    public function getEquipement(): ?Equipement
     {
-        return $this->idEquipement;
+        return $this->Equipement;
     }
 
-    public function setIdEquipement(?Equipement $idEquipement): self
+    public function setEquipement(?Equipement $Equipement): self
     {
-        $this->idEquipement = $idEquipement;
+        $this->Equipement = $Equipement;
 
         return $this;
     }

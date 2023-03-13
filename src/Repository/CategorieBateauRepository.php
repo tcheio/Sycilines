@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Contenir;
+use App\Entity\CategorieBateau;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Contenir>
+ * @extends ServiceEntityRepository<CategorieBateau>
  *
- * @method Contenir|null find($id, $lockMode = null, $lockVersion = null)
- * @method Contenir|null findOneBy(array $criteria, array $orderBy = null)
- * @method Contenir[]    findAll()
- * @method Contenir[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method CategorieBateau|null find($id, $lockMode = null, $lockVersion = null)
+ * @method CategorieBateau|null findOneBy(array $criteria, array $orderBy = null)
+ * @method CategorieBateau[]    findAll()
+ * @method CategorieBateau[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ContenirRepository extends ServiceEntityRepository
+class CategorieBateauRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Contenir::class);
+        parent::__construct($registry, CategorieBateau::class);
     }
 
-    public function save(Contenir $entity, bool $flush = false): void
+    public function save(CategorieBateau $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class ContenirRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Contenir $entity, bool $flush = false): void
+    public function remove(CategorieBateau $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class ContenirRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Contenir[] Returns an array of Contenir objects
+//     * @return CategorieBateau[] Returns an array of CategorieBateau objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class ContenirRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Contenir
+//    public function findOneBySomeField($value): ?CategorieBateau
 //    {
 //        return $this->createQueryBuilder('c')
 //            ->andWhere('c.exampleField = :val')

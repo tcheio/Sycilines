@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ContenirRepository;
+use App\Repository\CategorieBateauRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ContenirRepository::class)]
-class Contenir
+#[ORM\Entity(repositoryClass: CategorieBateauRepository::class)]
+class CategorieBateau
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -18,11 +18,11 @@ class Contenir
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Bateau $idBateau = null;
+    private ?Bateau $Bateau = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Type $idType = null;
+    private ?Type $Type = null;
 
     public function getId(): ?int
     {
@@ -41,26 +41,26 @@ class Contenir
         return $this;
     }
 
-    public function getIdBateau(): ?Bateau
+    public function getBateau(): ?Bateau
     {
-        return $this->idBateau;
+        return $this->Bateau;
     }
 
-    public function setIdBateau(?Bateau $idBateau): self
+    public function setBateau(?Bateau $Bateau): self
     {
-        $this->idBateau = $idBateau;
+        $this->Bateau = $Bateau;
 
         return $this;
     }
 
-    public function getIdType(): ?Type
+    public function getType(): ?Type
     {
-        return $this->idType;
+        return $this->Type;
     }
 
-    public function setIdType(?Type $idType): self
+    public function setType(?Type $Type): self
     {
-        $this->idType = $idType;
+        $this->Type = $Type;
 
         return $this;
     }
