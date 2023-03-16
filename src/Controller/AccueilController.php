@@ -15,8 +15,8 @@ class AccueilController extends AbstractController
     public function index(): Response
     {
         
-        $entity = $this->getDoctrine()->getManager();
-        $traversee = $entity->getRepository(Traversee::class)->findAll();
+        $entityManager = $this->getDoctrine()->getManager();
+        $traversee = $entityManager->getRepository(Traversee::class)->findAll();
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
             'traversee' => $traversee
