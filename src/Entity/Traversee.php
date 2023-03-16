@@ -27,7 +27,7 @@ class Traversee
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Bateau $idBateau = null;
+    private ?Bateau $Bateau = null;
 
     public function __construct()
     {
@@ -93,14 +93,14 @@ class Traversee
         return $this;
     }
 
-    public function getIdBateau(): ?Bateau
+    public function getBateau(): ?Bateau
     {
-        return $this->idBateau;
+        return $this->Bateau;
     }
 
-    public function setIdBateau(?Bateau $idBateau): self
+    public function setBateau(?Bateau $Bateau): self
     {
-        $this->idBateau = $idBateau;
+        $this->Bateau = $Bateau;
 
         return $this;
     }
