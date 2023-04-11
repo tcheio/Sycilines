@@ -6,21 +6,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Controller\Traversee;
+use App\Repository\TraverseeRepository;
 
 class AccueilController extends AbstractController
 {
     /**
      * #[Route('/accueil', name: 'app_accueil')]
     */
-    public function index(): Response
+    public function index(TraverseeRepository $rpTraversee): Response
     {
         
-        $entityManager = $this->getDoctrine()->getManager();
-        $traversee = $entityManager->getRepository(Traversee::class)->findAll();
-        return $this->render('accueil/index.html.twig', [
-            'controller_name' => 'AccueilController',
-            'traversee' => $traversee
-        ]);
+        $traversee = $rpTraversee->findAll();
+        return $this->render('accueil/index.html.twig', ['traversee' => $traversee]
+    );
     }
 }
 
