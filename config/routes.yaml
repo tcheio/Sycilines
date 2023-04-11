@@ -5,7 +5,7 @@ index:
 
 login:
     path: /login
-    controller: App\Controller\LoginClientController::index
+    controller: App\Controller\LoginController::index
 
 contact:
     path: /contact
