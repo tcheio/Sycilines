@@ -19,5 +19,5 @@ panier:
     controller: App\Controller\PanierController::index
 
 confirmation:
-    path: /panier
+    path: /confirm
     controller: App\Controller\ConfirmationController::index
