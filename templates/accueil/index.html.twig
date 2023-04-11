@@ -68,23 +68,21 @@
 <br>
 <br>
 <div class="container text-center">
-  <div class="row">
+    <div class="row">
+{% for l in liaison %}
+      <div class="col">
+        <img src = "images/bateauAccueil.jpg" alt="Oh un bateau">
+      </div>
     <div class="col">
-      <img src = "images/bateauAccueil.jpg" alt="Oh un bateau">
-    </div>
-    <div class="col">
-    <h1> Voyage </h1>
-    <br>
-    <p>Voyage pour 2 personnes</p>
+      <p> {{l.portDepart.getNom()}} - {{l.portArrivee.getNom()}} </p>
+      <br>
+      <p>Une traversee d'une durée de {{l.duree}}</p>
     </div>
     <div class="col">
       <button type="button" class="btn btn-success">Réserver</button>
     </div>
+{% endfor %}
   </div>
 </div>
-
-{% for tv in traversee %}
-    <p> {{tv.heure}}<p>
-    {% endfor %}
 
 {% endblock %}
