@@ -25,6 +25,12 @@ class Client
     #[ORM\Column(length: 100)]
     private ?string $ville = null;
 
+    #[ORM\Column(length: 150)]
+    private ?string $email = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $mdp = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +80,30 @@ class Client
     public function setVille(string $ville): self
     {
         $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getMdp(): ?string
+    {
+        return $this->mdp;
+    }
+
+    public function setMdp(string $mdp): self
+    {
+        $this->mdp = $mdp;
 
         return $this;
     }

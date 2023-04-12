@@ -42,17 +42,26 @@ class ClientRepository extends ServiceEntityRepository
 //    /**
 //     * @return Client[] Returns an array of Client objects
 //     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('c.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public static function findUserByMDP($login,$mdp): string
+    {
+        return $this->createQueryBuilder('c')
+            ->Where('c.user = :user')
+            ->setParameter('user', $login)
+            ->andWhere('c.mdp = :mdp')
+            ->setParameter('mdp', $mdp)
+            ->orderBy('c.id', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
+    public static function insertionCLient($nom,$email,$mdp): void
+    {
+        $dql = "Insert into App\Entity\Client c(c.nom,c.email,c.mdp) values ('"+$nom="','"+$email+"','"+$mdp+"');";
+        $this->getEntityMangager->createQuery($dql)->Execute();
+    }
 
 //    public function findOneBySomeField($value): ?Client
 //    {
