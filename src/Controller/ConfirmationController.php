@@ -10,6 +10,7 @@ use App\Repository\ClientRepository;
 class ConfirmationController extends AbstractController
 {
 
+    
     #[Route('/confirmation', name: 'app_confirmation')]
     public function index(ClientRepository $procedureLogin): Response
     {
