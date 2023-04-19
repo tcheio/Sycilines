@@ -2,6 +2,7 @@ index:
     path: /
     controller: App\Controller\AccueilController::index
 
+
 login:
     path: /login
     controller: App\Controller\LoginController::index
@@ -19,5 +20,5 @@ panier:
     controller: App\Controller\PanierController::index
 
 confirmation:
-    path: /panier
+    path: /confirm
     controller: App\Controller\ConfirmationController::index
